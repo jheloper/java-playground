@@ -6,17 +6,16 @@ import org.junit.Test;
 public class GenericStorageTest {
 
     @Test
-    public void setAndGetStoredDataWithMultipleTypes() {
+    public void setAndGetInGenericStorage() {
 
         final Integer data = 1;
-        // final String data = "this is data."
-        // final Double data = 3.14;
+        final String secondaryData = "this is data.";
 
-        GenericStorage<Integer> storage = new GenericStorage<>();
-        // GenericStorage<String> storage = new GenericStorage<>();
-        // GenericStorage<Double> storage = new GenericStorage<>();
+        GenericStorage<Integer, String> storage = new GenericStorage<>();
         storage.setStoredData(data);
+        storage.setSecondaryData(secondaryData);
 
         Assert.assertEquals(data, storage.getStoredData());
+        Assert.assertEquals(secondaryData, storage.getSecondaryData());
     }
 }

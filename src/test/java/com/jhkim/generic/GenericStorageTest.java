@@ -1,5 +1,6 @@
 package com.jhkim.generic;
 
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -17,5 +18,18 @@ public class GenericStorageTest {
 
         Assert.assertEquals(data, storage.getStoredData());
         Assert.assertEquals(secondaryData, storage.getSecondaryData());
+    }
+
+
+    @Test
+    public void wrapList() {
+
+        final String data = "this is data.";
+
+        GenericStorage<Integer, Double> storage = new GenericStorage<>();
+        final List<String> stringList = storage.<String>wrapList(data);
+//        final List<String> stringList = storage.wrapList(data);
+
+        Assert.assertEquals(data, stringList.get(0));
     }
 }

@@ -28,7 +28,7 @@ public class GenericStorageTest {
 
         GenericStorage<Integer, Double> storage = new GenericStorage<>();
         final List<String> stringList = storage.<String>wrapList(data);
-//        final List<String> stringList = storage.wrapList(data);
+        // final List<String> stringList = storage.wrapList(data);
 
         Assert.assertEquals(data, stringList.get(0));
     }

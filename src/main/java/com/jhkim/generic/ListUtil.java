@@ -4,7 +4,7 @@ import java.util.List;
 
 public class ListUtil {
 
-    public static <T> void printElements(List<T> list) {
+    public static void printElements(List<?> list) {
 
         for(int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
